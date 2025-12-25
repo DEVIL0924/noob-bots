@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login - ZENIHOST</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 100px; }
+        .container { max-width: 400px; margin: auto; padding: 30px; border: 2px solid #dc3545; border-radius: 10px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; }
+        button { background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚙️ ADMIN LOGIN</h1>
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <form method="POST" action="/admin_login">
+            <input type="text" name="username" placeholder="Admin Username" required><br>
+            <input type="password" name="password" placeholder="Admin Password" required><br>
+            <button type="submit">Login as Admin</button>
+        </form>
+        
+        <p><a href="/login">← User Login</a></p>
+    </div>
+</body>
+</html>
