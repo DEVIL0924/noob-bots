@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - ZENIHOST</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; }
+        button { background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
+        .error { color: red; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Register</h1>
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        
+        <form method="POST" action="/register">
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="email" name="email" placeholder="Email (optional)"><br>
+            <button type="submit">Register</button>
+        </form>
+        
+        <p>Already have account? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>
